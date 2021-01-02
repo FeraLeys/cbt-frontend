@@ -75,6 +75,21 @@ name: 'DetailUjian',
           { nama_ujian: 'Seni itu ledakan', mata_ujian: 'Seni Budaya', jumlah_soal: 60 },
         ]
       }
+    },
+
+    mounted(){
+        this.$store
+        .dispatch('getUjianDetail', {
+            id: this.$route.params.idUjian
+        })
+        .then((res) => {
+            if(res.status != "OK"){
+                alert('gagal');
+            }
+        })
+        .catch((err) => {
+            alert('gagal');
+        })
     }
 }
 </script>
