@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import Auth from "../views/Login.vue";
 import Header from '../layouts/Header.vue'
 import Dashboard from '../views/Dashboard.vue'
+import DetailUjian from "../views/Detail-ujian.vue";
+
 
 Vue.use(VueRouter)
 
@@ -22,6 +24,14 @@ const routes = [
     components: {
       header: Header,
       default: Auth
+    }
+  },
+  {
+    path: '/detail/:idUjian',
+    name: 'DetailUjian',
+    components: {
+      header: Header,
+      default: DetailUjian
     }
   },
   {
